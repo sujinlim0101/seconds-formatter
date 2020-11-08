@@ -2,6 +2,7 @@
   function formatDuration(seconds) {
     if (seconds === 0) return 'now';
     if (seconds < 0) return;
+
     const year = 60 * 60 * 24 * 365;
     const day = 60 * 60 * 24;
     const hour = 60 * 60;
@@ -17,7 +18,8 @@
       if (num > 1) {
         arr.push(`${num} years`);
       } else {
-        //seconds가 year보다 크니까 무조건 year이 1이상
+        //seconds > year이므로 무조건 year이 1이상
+        //띠리사 else에 걸리는 것은 num === 1
         arr.push(`${num} year`);
       }
       seconds -= num * year;
@@ -79,7 +81,6 @@
     console.log(sentence);
     return sentence;
   }
-
   formatDuration(62);
   formatDuration(3662);
 })();
