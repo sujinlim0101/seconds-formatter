@@ -3,7 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
     <title>Time formatter</title>
   </head>
-  <body></body>
+  <body>
+    <h1>Time formatter</h1>
+    <p>Please input a number for time format</p>
+    <form onsubmit="return false;">
+      <div class="input">
+        <label for="text">Input:</label>
+        <input type="number" name="text" id="input" />
+      </div>
+      <br />
+      <div class="result"><label>Output:</label> <span id="output"></span></div>
+    </form>
+  </body>
+  <script src="index.js"></script>
+  <script>
+    document.getElementById('input').addEventListener('change', event => {
+      let value = event.target.value * 1;
+      let result = formatDuration(value);
+      document.getElementById('output').textContent = result;
+    });
+  </script>
 </html>

@@ -1,0 +1,13 @@
+body {
+  margin: 1rem;
+  padding: 1rem;
+}
+label {
+  display: inline-block;
+  min-width: 5rem;
+  font-weight: bold;
+}
+
+div.input div.result {
+  margin-bottom: 1rem;
+}
