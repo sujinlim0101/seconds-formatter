@@ -1,7 +1,7 @@
 (() => {
   function formatDuration(seconds) {
     if (seconds === 0) return 'now';
-
+    if (seconds < 0) return;
     const year = 60 * 60 * 24 * 365;
     const day = 60 * 60 * 24;
     const hour = 60 * 60;
@@ -61,7 +61,25 @@
       }
       seconds -= num * second;
     }
-    console.log(arr);
+    if (arr.length === 2) {
+      sentence = `${arr[0]} and ${arr[1]}`;
+    } else if (arr.length > 2) {
+      for (let i = 0; i < arr.length; i++) {
+        if (i < arr.length - 2) {
+          sentence += arr[i] + ', ';
+        } else if (i === arr.length - 2) {
+          sentence += arr[i] + ' and ';
+        } else {
+          sentence += arr[i];
+        }
+      }
+    } else {
+      sentence = arr.toString();
+    }
+    console.log(sentence);
+    return sentence;
   }
-  formatDuration(60 * 60 * 24 * 365 * 4 + 67);
+
+  formatDuration(62);
+  formatDuration(3662);
 })();
