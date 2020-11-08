@@ -19,8 +19,8 @@
       } else {
         //seconds가 year보다 크니까 무조건 year이 1이상
         arr.push(`${num} year`);
-        seconds -= num * year;
       }
+      seconds -= num * year;
     }
 
     if (seconds >= day) {
@@ -63,5 +63,5 @@
     }
     console.log(arr);
   }
-  formatDuration(60 * 60 * 24 * 365 * 2 + 67);
+  formatDuration(60 * 60 * 24 * 365 * 4 + 67);
 })();
