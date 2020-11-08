@@ -1,13 +1,16 @@
 (() => {
   function formatDuration(seconds) {
+    //second이 0, minus일 때
     if (seconds === 0) return 'now';
     if (seconds < 0) return;
 
+    //초로 환산한 값
     const year = 60 * 60 * 24 * 365;
     const day = 60 * 60 * 24;
     const hour = 60 * 60;
     const minute = 60;
     const second = 1;
+
     let num = 0;
     let arr = [];
     let sentence = '';
@@ -63,6 +66,7 @@
       }
       seconds -= num * second;
     }
+    //arr.length에 따라 다른 문장 만듬
     if (arr.length === 2) {
       sentence = `${arr[0]} and ${arr[1]}`;
     } else if (arr.length > 2) {
